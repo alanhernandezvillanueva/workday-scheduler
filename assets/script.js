@@ -9,16 +9,15 @@ var threePmTaskDesc = document.getElementById("3pmtext");
 var fourPmTaskDesc = document.getElementById("4pmtext");
 var fivePmTaskDesc = document.getElementById("5pmtext");
 
-var currentDay = moment().format("ddd, MMM D ");
+var currentDay = moment().format('dddd, MMMM Do');
 var currentDayElement = document.getElementById("currentDay");
 currentDayElement.innerText = currentDay;
-
+console.log(currentDay);
 
 
 
 document.getElementById("9am").addEventListener("click", function(event) {
     event.preventDefault();
-    console.log(moment);
     var nineAmInputText = nineAmTaskDesc.innerHTML;
     if (!nineAmTaskDesc == "")  {
       nineHourTask = {
