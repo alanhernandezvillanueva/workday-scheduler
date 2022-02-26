@@ -9,41 +9,50 @@ var threePmTaskDesc = document.getElementById("3pmtext");
 var fourPmTaskDesc = document.getElementById("4pmtext");
 var fivePmTaskDesc = document.getElementById("5pmtext");
 
-// document.addEventListener("DOMContentLoaded", function(){ // Handler when the DOM is fully loaded 
-//    
-//     var currentTimeElement = document.getElementsByClassName("lead"); currentTimeElement.innerText = currentTime; });
 
 document.addEventListener("DOMContentLoaded", function(){ 
     var currentDay = moment().format('MMMM Do YYYY, h:mm:ss a');
-    var currentTime = moment().format("H");
-    var currentTimeElement = document.getElementById("currentDay"); currentTimeElement.innerHTML = currentTime
     var currentDayElement = document.getElementById("currentDay"); currentDayElement.innerText = currentDay; });
+
  
+var currentTime = moment().format("H");
+
     
-    var taskInputBackground = document.getElementsByClassName("description");
 
-    for (var i = 0; i < taskInputBackground.length; i++) {
 
-     
-        var elementID = taskInputBackground[i].id;
+var taskImportanceColorCode = document.getElementsByTagName("textarea");
+
+
+//create a forloop that goes through all the tasks and add color to the background accordingly 
+   
+    for (var i = 0; i < taskImportanceColorCode.length; i++) {
+
+        var taskDescriptionEl = taskImportanceColorCode[i].id;
+        var taskBackgoundColor = document.getElementById(taskImportanceColorCode[i].id);
         
-
-        var taskColorElement = document.getElementById(taskInputBackground[i].id);
-
       
-        var element = document.getElementsByClassName("col-10");
-        element.classList.remove(".past .present .future");
 
-        if (elementID < currentTime) {
-            element.classList.add("past");
+        if (taskDescriptionEl < currentTime) {
+            taskBackgoundColor.classList.add(".past");
         }
-        else if (elementID > currentTime) {
-            element.classList.add("future");
+        else if (taskDescriptionEl > currentTime) {
+            taskBackgoundColor.classList.add(".future");
         }
         else {
-            element.classList.add("present");
+            element.classList.add(".present");
+            taskBackgoundColor.classList.addClass("present");
         }
     }
+    
+
+    
+    
+
+
+
+    
+
+
   
 
 
