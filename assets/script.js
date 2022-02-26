@@ -9,13 +9,46 @@ var threePmTaskDesc = document.getElementById("3pmtext");
 var fourPmTaskDesc = document.getElementById("4pmtext");
 var fivePmTaskDesc = document.getElementById("5pmtext");
 
-var currentDay = moment().format('dddd, MMMM Do');
-var currentDayElement = document.getElementById("currentDay");
-currentDayElement.innerText = currentDay;
-console.log(currentDay);
+// document.addEventListener("DOMContentLoaded", function(){ // Handler when the DOM is fully loaded 
+//    
+//     var currentTimeElement = document.getElementsByClassName("lead"); currentTimeElement.innerText = currentTime; });
+
+document.addEventListener("DOMContentLoaded", function(){ 
+    var currentDay = moment().format('MMMM Do YYYY, h:mm:ss a');
+    var currentTime = moment().format("H");
+    var currentTimeElement = document.getElementById("currentDay"); currentTimeElement.innerHTML = currentTime
+    var currentDayElement = document.getElementById("currentDay"); currentDayElement.innerText = currentDay; });
+ 
+    
+    var taskInputBackground = document.getElementsByClassName("description");
+
+    for (var i = 0; i < taskInputBackground.length; i++) {
+
+     
+        var elementID = taskInputBackground[i].id;
+        
+
+        var taskColorElement = document.getElementById(taskInputBackground[i].id);
+
+      
+        var element = document.getElementsByClassName("col-10");
+        element.classList.remove(".past .present .future");
+
+        if (elementID < currentTime) {
+            element.classList.add("past");
+        }
+        else if (elementID > currentTime) {
+            element.classList.add("future");
+        }
+        else {
+            element.classList.add("present");
+        }
+    }
+  
 
 
-
+    
+    
 document.getElementById("9am").addEventListener("click", function(event) {
     event.preventDefault();
     var nineAmInputText = nineAmTaskDesc.innerHTML;
