@@ -25,24 +25,25 @@ var taskImportanceColorCode = document.getElementsByTagName("textarea");
 
 //create a forloop that goes through all the tasks and add color to the background accordingly 
    
-    for (var i = 0; i < taskImportanceColorCode.length; i++) {
+    // for (var i = 0; i < taskImportanceColorCode.length; i++) {
 
-        var taskDescriptionEl = taskImportanceColorCode[i].id;
-        var taskBackgoundColor = document.getElementById(taskImportanceColorCode[i].id);
+    //     var taskDescriptionEl = taskImportanceColorCode[i].id;
+    //     var taskBackgoundColorEl = document.getElementById(taskImportanceColorCode[i].id);
+
+    //     $(taskImportanceColorCode[i].id).removeClass(".past .present .future");
         
       
 
-        if (taskDescriptionEl < currentTime) {
-            taskBackgoundColor.classList.add(".past");
-        }
-        else if (taskDescriptionEl > currentTime) {
-            taskBackgoundColor.classList.add(".future");
-        }
-        else {
-            element.classList.add(".present");
-            taskBackgoundColor.classList.addClass("present");
-        }
-    }
+    //     if (taskDescriptionEl < currentTime) {
+    //         taskBackgoundColorEl.classList.add(".past");
+    //     }
+    //     else if (taskDescriptionEl > currentTime) {
+    //       taskBackgoundColorEl.classList.add(".future");
+    //     }
+    //     else {
+    //        taskBackgoundColorEl.classList.addClass("present");
+    //     }
+    // }
     
 
     
